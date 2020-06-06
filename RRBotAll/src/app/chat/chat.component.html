@@ -1,0 +1,57 @@
+<div class="message-content">
+    <div class="messages-headline">
+        <h4>RRBot
+          <!--<span>-->  
+              
+               <!-- <a href="javascript:void()" (click)="clearConversation()" class="message-action"><i class="icon-feather-trash-2"></i>
+                    Clear</a>-->
+            <!--</span>-->
+        </h4>
+    </div>
+
+    <!-- Message Content Inner -->
+    <div style="min-height:350px" class="message-content-inner">
+        <app-message *ngFor="let m of conversation" [message]="m" (onChipSelected)="onChipSelected($event)">
+        </app-message>
+    </div>
+    <!-- Message Content Inner / End -->
+
+    <!-- Reply Area -->
+    <ng-template #voicesection>
+      <ng-container
+        *ngIf="!voiceActiveSectionError; else failure">
+        <ng-container
+          *ngIf="voiceText; else start">
+           <!--   <span>{{voiceText}}</span>  -->
+           <span></span>
+        </ng-container>
+        <ng-template #start>
+          <ng-container
+            *ngIf="voiceActiveSectionListening; else beginning">
+            <span>Listening...</span>
+          </ng-container>
+          <ng-template #beginning>
+            <span>talking...</span>
+          </ng-template>
+        </ng-template>
+      </ng-container>
+      <ng-template #failure>
+        <span class="img" (click)='closeVoiceRecognition()'><img src='../../assets/images/stop.png/'/></span>
+      </ng-template>
+      
+    </ng-template>
+    <div class="message-reply">
+      
+        <input type="text" placeholder="Type message and hit enter" [(ngModel)]="inputMessage" (keyup.enter)="sendMessage()">
+        &nbsp;<span   #myButton class="img"  (click)="sendMessage()">  <img src='../../assets/images/send-512.png/'/></span>
+      <!--   <button   >send
+        </button> -->
+        &nbsp;
+        <span class="img"
+    *ngIf="voiceActiveSectionDisabled; else voicesection;" (click)="startVoiceRecognition()"  >
+          <img src='../../assets/images/speechtext.jfif/'/>
+        </span>
+      </div>
+   
+      
+</div>

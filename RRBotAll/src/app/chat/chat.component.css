@@ -1,0 +1,80 @@
+
+
+.messages-headline {
+    padding: 5px;
+    padding-left: 20px;
+    background-color: #0066A1;
+    color: #ffffff;
+    height: 70px;
+}
+ 
+h4{
+    color: #ffffff;
+}
+
+
+.chat-window {
+    position: absolute;
+    width: 80%;
+    height: 80%;
+    margin-left: 2rem;
+    ;
+    overflow-y: auto;
+}
+
+.message-input {
+    position: fixed;
+    bottom: 0;
+    left: 10%;
+    width: 80%;
+    min-height: 5%;
+    margin: auto;
+}
+
+.input-msg-box {
+    width: 95%;
+}
+
+.msg-bubble-bot {
+    border-radius: 10rem;
+    background-color: #0066A1;
+    color: #ffffff;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.msg-bubble-human {
+    border-radius: 10rem;
+    background-color: #cccccc;
+    color: #000000;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.card-with-img-text {
+    border-radius: 10rem;
+    background-color: #0066A1;
+    color: #ffffff;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+}
+
+.card-with-img-text img {
+    max-width: 250px;
+    border: #0066A1 1px solid;
+}
+.img {
+    padding: 0px;width: 6%;
+}
+@media screen and (max-width: 992px) {
+    .img {
+        padding: 0px;width: 8%;
+    }
+  }
+  
+  /* On screens that are 600px or less, set the background color to olive */
+  @media screen and (max-width: 600px) {
+    .img {
+        padding: 0px;width: 12%;
+    }
+  }
